@@ -7,6 +7,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+//DAO
 public class SampleDataProvider {
     public static List<DataItem> dataItemList;
     public static Map<String,DataItem> dataItemMap;
