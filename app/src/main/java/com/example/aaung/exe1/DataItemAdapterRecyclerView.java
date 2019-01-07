@@ -2,8 +2,11 @@ package com.example.aaung.exe1;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.drawable.Drawable;
+import android.preference.PreferenceManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -29,8 +32,15 @@ public class DataItemAdapterRecyclerView extends RecyclerView.Adapter<DataItemAd
 
     @Override
     public DataItemAdapterRecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+
+        final SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(mContext);
+
+//        boolean grid = preferences.getBoolean(mContext.getString(R.string.pref_display_grid), false);
+//        Log.e("grid", grid + "");
+//        int layoutId  = grid? R.layout.grid_item : R.layout.list_item;
+
         LayoutInflater inflater = LayoutInflater.from(mContext);
-        View itemView = inflater.inflate(R.layout.list_item,parent,false);
+        View itemView = inflater.inflate(viewType,parent,false);
         ViewHolder viewHolder = new ViewHolder(itemView);
         return viewHolder;
     }
@@ -67,6 +77,14 @@ public class DataItemAdapterRecyclerView extends RecyclerView.Adapter<DataItemAd
                 mContext.startActivity(intent);
             }
         });
+    }
+
+    @Override
+    public int getItemViewType(int position) {
+        final SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(mContext);
+        boolean grid = preferences.getBoolean(mContext.getString(R.string.pref_display_grid), false);
+        Log.e("grid", grid + "");
+        return grid? R.layout.grid_item : R.layout.list_item;
     }
 
     @Override

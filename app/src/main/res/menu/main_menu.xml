@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item android:id="@+id/action_settings"
+        app:showAsAction="ifRoom"
+        android:title="@string/menu_main">
+        <menu>
+            <item android:id="@+id/exe_list_and_grid" android:title="using list and grid"></item>
+            <item android:id="@+id/exe_internal_storage" android:title="using internal storage"></item>
+            <item android:id="@+id/exe_external_storage" android:title="using external storage"></item>
+            <item android:id="@+id/exe_json" android:title="using json">
+                <menu>
+                    <item android:id="@+id/exe_import" android:title="json import"></item>
+                    <item android:id="@+id/exe_export" android:title="json export"></item>
+                </menu>
+            </item>
+        </menu>
+    </item>
+</menu>

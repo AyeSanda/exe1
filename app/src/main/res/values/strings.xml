@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">exe1</string>
+    <string name="menu_main">Menu</string>
+    <string name="menu_setting">Setting</string>
+    <string name="menu_signin">Signin</string>
+    <string name="display_in_grid">Display in grid</string>
+    <string name="pref_display_grid">pref_display_grid</string>
 </resources>
